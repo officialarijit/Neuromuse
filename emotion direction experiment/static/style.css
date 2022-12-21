@@ -1,0 +1,110 @@
+body {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+}
+
+body > * {
+    margin-bottom: 1em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.transparent {
+    opacity: 0;
+    pointer-events: none;
+}
+
+p {
+    margin: 0;
+    width: 800px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16pt;
+    line-height: 150%;
+}
+
+p.plus {
+    font-size: 160pt !important;
+}
+
+p.centered {
+    text-align: center;
+}
+
+span.centered {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+.rcorners {
+    padding: 20px;
+
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+}
+
+.button {
+    display: inline-block;
+    margin: 4px 2px;
+    padding: 20px;
+
+    background-color: #4CAF50;
+
+    border: 2px solid #4CAF50;
+    border-radius: 12px;
+
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition-duration: 0.1s;
+    outline: none;
+}
+
+.button:hover {
+    background-color: white;
+
+    color: #4CAF50;
+}
+
+.sam {
+    overflow: hidden;
+}
+
+.sam p {
+    height: 250px;
+}
+
+.sam label {
+    display: inline-block;
+    position: relative;
+    top: -130px;
+    width: 17%;
+}
+
+.sam label + label {
+    margin-left: -0.8%;
+}
+
+.sam label:not(:last-child) {
+    margin-right: 3.7%;
+}
+
+.sam label input {
+    margin-top: 135px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
