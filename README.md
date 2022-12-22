@@ -1,6 +1,6 @@
 # Neuromuse
 
-Publication of the code used to conduce experiments within the Neuromuse project from Eurecat.
+Publication of the code used to conduct experiments within the Neuromuse project from Eurecat.
 
 
 # Dependencies, Installation, and Usage
