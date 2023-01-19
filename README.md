@@ -14,8 +14,10 @@ Please see each subfolder for details
 
 # Publications
 
-Include a list of related publications if needed.   
-Otherwise remove this section.
+The preprint of this work:
+`Emotional Impact of Source Localization in Music Using Machine Learning and EEG: a proof-of-concept study`
+
+  URL: https://doi.org/10.36227/techrxiv.21789866.v1
 
 
 -----------------------
