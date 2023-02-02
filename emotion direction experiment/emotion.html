@@ -120,7 +120,7 @@
         }
 
         function changePage(toElem, message='') {
-            $('button').prop('disabled', true); // prevent user from clicking buttons twice while transitioning
+            $('button').prop('disabled', true);
             slowScrollToTop();
 
             fromElem = $('body > div:not(.hidden)');
@@ -195,7 +195,6 @@
 
         function submitSAM() {
             if(block_end) {
-                block_end = false;
                 showQuestionnaire();
             } else {
                 showRest(rest_delay);
@@ -208,13 +207,9 @@
             changePage($('.questionnaire'), '.questionaire');
         }
 
-
-        // ---
-        // Show progress to user
-        // ---
-
         shown_progress = 0.;
         function submitQuestionnaire() {
+            block_end = false;
             if(experiment_end) {
                 experiment_end = false;
                 showEnd();

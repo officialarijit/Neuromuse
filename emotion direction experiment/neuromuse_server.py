@@ -132,14 +132,13 @@ class SimpleEcho(WebSocket):
 
     def handleMessage(self):
         print(" - received: " + self.data)
+        writeCSVLine([self.data])
         if(self.data == 'play'):
             self.play_next()
         elif(self.data[:8] == 'baseline'):
             outlet.push_sample([12])
         elif(self.data == 'rest 5000'):
             outlet.push_sample([10])
-        else:
-            writeCSVLine([self.data])
 
     def play_next(self):
         b = blocks[self.block_index]
@@ -147,7 +146,7 @@ class SimpleEcho(WebSocket):
         s = b[1][self.sample_index]
 
         r, w = wf.read(s)
-        l = 48000*21#len(w)
+        l = 48000*21#21#len(w)
         o = np.zeros((l, channels), dtype=w.dtype)
         o[:l, ch] = w[:l] * corrective_gains[ch]
 
@@ -174,10 +173,13 @@ class SimpleEcho(WebSocket):
             self.sample_index = 0
             self.block_index += 1
             if(self.block_index == len(blocks)):
+                print(' sent: end')
                 self.sendMessage('end')
             else:
+                print(' sent: block ' + str(self.block_index/len(blocks)))
                 self.sendMessage('block ' + str(self.block_index/len(blocks)))
         else:
+            print(' sent: sample')
             self.sendMessage('sample')
 
 server = SimpleWebSocketServer('', 8001, SimpleEcho)
